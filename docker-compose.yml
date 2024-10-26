@@ -2,11 +2,13 @@ version: "3.8"
 
 services:
   tasmogo:
-    image: merlinschumacher/tasmogo
+    build: .
     environment:
-      - TASMOGO_DOUPDATES=false
+      - TASMOGO_DOUPDATES=true
       - TASMOGO_DAEMON=true
       - TASMOGO_CIDR=192.168.178.0/24
+      - TASMOGO_OTAURL=http://ota.tasmota.com/tasmota/release/
+      - TASMOGO_PASSWORD=
       - TZ=Europe/Berlin
     network_mode: host
     restart: always
